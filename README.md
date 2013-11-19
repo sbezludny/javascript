@@ -1,42 +1,42 @@
-# Airbnb JavaScript Style Guide() {
+# Airbnb Руководство по Стилю JavaScript() {
 
-*A mostly reasonable approach to JavaScript*
+*Главным образом разумный подход к JavaScript*
 
 
-## <a name='TOC'>Table of Contents</a>
+## <a name='TOC'>Оглавление</a>
 
-  1. [Types](#types)
-  1. [Objects](#objects)
-  1. [Arrays](#arrays)
-  1. [Strings](#strings)
-  1. [Functions](#functions)
-  1. [Properties](#properties)
-  1. [Variables](#variables)
-  1. [Hoisting](#hoisting)
-  1. [Conditional Expressions & Equality](#conditionals)
-  1. [Blocks](#blocks)
-  1. [Comments](#comments)
-  1. [Whitespace](#whitespace)
-  1. [Commas](#commas)
-  1. [Semicolons](#semicolons)
-  1. [Type Casting & Coercion](#type-coercion)
-  1. [Naming Conventions](#naming-conventions)
-  1. [Accessors](#accessors)
-  1. [Constructors](#constructors)
-  1. [Events](#events)
-  1. [Modules](#modules)
+  1. [Типы](#types)
+  1. [Объекты](#objects)
+  1. [Массивы](#arrays)
+  1. [Строки](#strings)
+  1. [Функции](#functions)
+  1. [Свойства](#properties)
+  1. [Переменные](#variables)
+  1. [Резервирование](#hoisting)
+  1. [Условные выражения и равенства](#conditionals)
+  1. [Блоки](#blocks)
+  1. [Комментарии](#comments)
+  1. [Пробелы](#whitespace)
+  1. [Запятые](#commas)
+  1. [Точки с запятой](#semicolons)
+  1. [Приведение типов](#type-coercion)
+  1. [Соглашения об именовании](#naming-conventions)
+  1. [Методы доступа](#accessors)
+  1. [Конструкторы](#constructors)
+  1. [События](#events)
+  1. [Модули](#modules)
   1. [jQuery](#jquery)
-  1. [ES5 Compatibility](#es5)
-  1. [Testing](#testing)
-  1. [Performance](#performance)
-  1. [Resources](#resources)
-  1. [In the Wild](#in-the-wild)
-  1. [Translation](#translation)
-  1. [The JavaScript Style Guide Guide](#guide-guide)
-  1. [Contributors](#contributors)
-  1. [License](#license)
+  1. [Совместимость с ES5](#es5)
+  1. [Тестирование](#testing)
+  1. [Производительность](#performance)
+  1. [Ресурсы](#resources)
+  1. [В реальных условиях](#in-the-wild)
+  1. [Перевод](#translation)
+  1. [Руководство к Руководству по Стилю JavaScript](#guide-guide)
+  1. [Авторы](#contributors)
+  1. [Лицензия](#license)
 
-## <a name='types'>Types</a>
+## <a name='types'>Типы</a>
 
   - **Primitives**: When you access a primitive type you work directly on its value
 
@@ -71,7 +71,7 @@
 
     **[[⬆]](#TOC)**
 
-## <a name='objects'>Objects</a>
+## <a name='objects'>Объекты</a>
 
   - Use the literal syntax for object creation.
 
@@ -119,7 +119,7 @@
     ```
     **[[⬆]](#TOC)**
 
-## <a name='arrays'>Arrays</a>
+## <a name='arrays'>Массивы</a>
 
   - Use the literal syntax for array creation
 
@@ -172,7 +172,7 @@
     **[[⬆]](#TOC)**
 
 
-## <a name='strings'>Strings</a>
+## <a name='strings'>Строки</a>
 
   - Use single quotes `''` for strings
 
@@ -262,7 +262,7 @@
     **[[⬆]](#TOC)**
 
 
-## <a name='functions'>Functions</a>
+## <a name='functions'>Функции</a>
 
   - Function expressions:
 
@@ -321,7 +321,7 @@
 
 
 
-## <a name='properties'>Properties</a>
+## <a name='properties'>Свойства</a>
 
   - Use dot notation when accessing properties.
 
@@ -356,7 +356,7 @@
     **[[⬆]](#TOC)**
 
 
-## <a name='variables'>Variables</a>
+## <a name='variables'>Переменные</a>
 
   - Always use `var` to declare variables. Not doing so will result in global variables. We want to avoid polluting the global namespace. Captain Planet warned us of that.
 
@@ -465,7 +465,7 @@
     **[[⬆]](#TOC)**
 
 
-## <a name='hoisting'>Hoisting</a>
+## <a name='hoisting'>Резервирование</a>
 
   - Variable declarations get hoisted to the top of their scope, their assignment does not.
 
@@ -555,7 +555,7 @@
 
 
 
-## <a name='conditionals'>Conditional Expressions & Equality</a>
+## <a name='conditionals'>Условные выражения и равенства</a>
 
   - Use `===` and `!==` over `==` and `!=`.
   - Conditional expressions are evaluated using coercion with the `ToBoolean` method and always follow these simple rules:
@@ -603,7 +603,7 @@
     **[[⬆]](#TOC)**
 
 
-## <a name='blocks'>Blocks</a>
+## <a name='blocks'>Блоки</a>
 
   - Use braces with all multi-line blocks.
 
@@ -632,7 +632,7 @@
     **[[⬆]](#TOC)**
 
 
-## <a name='comments'>Comments</a>
+## <a name='comments'>Комментарии</a>
 
   - Use `/** ... */` for multiline comments. Include a description, specify types and values for all parameters and return values.
 
@@ -725,7 +725,7 @@
     **[[⬆]](#TOC)**
 
 
-## <a name='whitespace'>Whitespace</a>
+## <a name='whitespace'>Пробелы</a>
 
   - Use soft tabs set to 2 spaces
 
@@ -820,7 +820,7 @@
 
     **[[⬆]](#TOC)**
 
-## <a name='commas'>Commas</a>
+## <a name='commas'>Запятые</a>
 
   - Leading commas: **Nope.**
 
@@ -883,7 +883,7 @@
     **[[⬆]](#TOC)**
 
 
-## <a name='semicolons'>Semicolons</a>
+## <a name='semicolons'>Точки с запятой</a>
 
   - **Yup.**
 
@@ -910,7 +910,7 @@
     **[[⬆]](#TOC)**
 
 
-## <a name='type-coercion'>Type Casting & Coercion</a>
+## <a name='type-coercion'>Приведение типов</a>
 
   - Perform type coercion at the beginning of the statement.
   - Strings:
@@ -986,7 +986,7 @@
     **[[⬆]](#TOC)**
 
 
-## <a name='naming-conventions'>Naming Conventions</a>
+## <a name='naming-conventions'>Соглашения об именовании</a>
 
   - Avoid single letter names. Be descriptive with your naming.
 
@@ -1099,7 +1099,7 @@
     **[[⬆]](#TOC)**
 
 
-## <a name='accessors'>Accessors</a>
+## <a name='accessors'>Методы доступа</a>
 
   - Accessor functions for properties are not required
   - If you do make accessor functions use getVal() and setVal('hello')
@@ -1153,7 +1153,7 @@
     **[[⬆]](#TOC)**
 
 
-## <a name='constructors'>Constructors</a>
+## <a name='constructors'>Конструкторы</a>
 
   - Assign methods to the prototype object, instead of overwriting the prototype with a new object. Overwriting the prototype makes inheritance impossible: by resetting the prototype you'll overwrite the base!
 
@@ -1238,7 +1238,7 @@
     **[[⬆]](#TOC)**
 
 
-## <a name='events'>Events</a>
+## <a name='events'>События</a>
 
   - When attaching data payloads to events (whether DOM events or something more proprietary like Backbone events), pass a hash instead of a raw value. This allows a subsequent contributor to add more data to the event payload without finding and updating every handler for the event. For example, instead of:
 
@@ -1269,7 +1269,7 @@
   **[[⬆]](#TOC)**
 
 
-## <a name='modules'>Modules</a>
+## <a name='modules'>Модули</a>
 
   - The module should start with a `!`. This ensures that if a malformed module forgets to include a final semicolon there aren't errors in production when the scripts get concatenated. [Explanation](https://github.com/airbnb/javascript/issues/44#issuecomment-13063933)
   - The file should be named with camelCase, live in a folder with the same name, and match the name of the single export.
@@ -1362,14 +1362,14 @@
     **[[⬆]](#TOC)**
 
 
-## <a name='es5'>ECMAScript 5 Compatibility</a>
+## <a name='es5'>Совместимость с ECMAScript 5</a>
 
   - Refer to [Kangax](https://twitter.com/kangax/)'s ES5 [compatibility table](http://kangax.github.com/es5-compat-table/)
 
   **[[⬆]](#TOC)**
 
 
-## <a name='testing'>Testing</a>
+## <a name='testing'>Тестирование</a>
 
   - **Yup.**
 
@@ -1382,7 +1382,7 @@
     **[[⬆]](#TOC)**
 
 
-## <a name='performance'>Performance</a>
+## <a name='performance'>Производительность</a>
 
   - [On Layout & Web Performance](http://kellegous.com/j/2013/01/26/layout-performance/)
   - [String vs Array Concat](http://jsperf.com/string-vs-array-concat/2)
@@ -1396,7 +1396,7 @@
   **[[⬆]](#TOC)**
 
 
-## <a name='resources'>Resources</a>
+## <a name='resources'>Ресурсы</a>
 
 
 **Read This**
@@ -1451,7 +1451,7 @@
 
   **[[⬆]](#TOC)**
 
-## <a name='in-the-wild'>In the Wild</a>
+## <a name='in-the-wild'>В реальных условиях</a>
 
   This is a list of organizations that are using this style guide. Send us a pull request or open an issue and we'll add you to the list.
 
@@ -1476,7 +1476,7 @@
   - **Zillow**: [zillow/javascript](https://github.com/zillow/javascript)
   - **ZocDoc**: [ZocDoc/javascript](https://github.com/ZocDoc/javascript)
 
-## <a name='translation'>Translation</a>
+## <a name='translation'>Перевод</a>
 
   This style guide is also available in other languages:
 
@@ -1487,16 +1487,16 @@
   - :es: **Spanish**: [paolocarrasco/javascript-style-guide](https://github.com/paolocarrasco/javascript-style-guide)
   - :kr: **Korean**: [tipjs/javascript-style-guide](https://github.com/tipjs/javascript-style-guide)
 
-## <a name='guide-guide'>The JavaScript Style Guide Guide</a>
+## <a name='guide-guide'>Руководство к Руководству по Стилю JavaScript</a>
 
   - [Reference](https://github.com/airbnb/javascript/wiki/The-JavaScript-Style-Guide-Guide)
 
-## <a name='authors'>Contributors</a>
+## <a name='authors'>Авторы</a>
 
   - [View Contributors](https://github.com/airbnb/javascript/graphs/contributors)
 
 
-## <a name='license'>License</a>
+## <a name='license'>Лицензия</a>
 
 (The MIT License)
 
