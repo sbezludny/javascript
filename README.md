@@ -174,7 +174,7 @@
 
 ## <a name='strings'>Строки</a>
 
-  - Use single quotes `''` for strings
+  - Используйте одинарные кавычки `''` для строк
 
     ```javascript
     // bad
@@ -190,8 +190,8 @@
     var fullName = 'Bob ' + this.lastName;
     ```
 
-  - Strings longer than 80 characters should be written across multiple lines using string concatenation.
-  - Note: If overused, long strings with concatenation could impact performance. [jsPerf](http://jsperf.com/ya-string-concat) & [Discussion](https://github.com/airbnb/javascript/issues/40)
+  - Строки длиннее 80 символов должны быть записаны в несколько строчек с помощью конкатенации.
+  - Примечание: При злоупотреблении, конкатенация длинных строк может повлиять на производительность. [jsPerf](http://jsperf.com/ya-string-concat) & [Обсуждение](https://github.com/airbnb/javascript/issues/40)
 
     ```javascript
     // bad
@@ -215,7 +215,7 @@
       'fast.';
     ```
 
-  - When programatically building up a string, use Array#join instead of string concatenation. Mostly for IE: [jsPerf](http://jsperf.com/string-vs-array-concat/2).
+  - При программном создании строки, используйте Array#join вместо конкатенации. В основном для IE: [jsPerf](http://jsperf.com/string-vs-array-concat/2).
 
     ```javascript
     var items,
@@ -264,27 +264,27 @@
 
 ## <a name='functions'>Функции</a>
 
-  - Function expressions:
+  - Функциональные выражения:
 
     ```javascript
-    // anonymous function expression
+    // анонимное функциональное выражение
     var anonymous = function() {
       return true;
     };
 
-    // named function expression
+    // именованное функциональное выражение
     var named = function named() {
       return true;
     };
 
-    // immediately-invoked function expression (IIFE)
+    // вызываемая моментально функциональное выражение (IIFE)
     (function() {
       console.log('Welcome to the Internet. Please follow me.');
     })();
     ```
 
-  - Never declare a function in a non-function block (if, while, etc). Assign the function to a variable instead. Browsers will allow you to do it, but they all interpret it differently, which is bad news bears.
-  - **Note:** ECMA-262 defines a `block` as a list of statements. A function declaration is not a statement. [Read ECMA-262's note on this issue](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97).
+  - Никогда не объявляйте функцию в нефункциональном блоке (if, while и т.п.). Браузеры позволят вам сделать это, но будут по-разному интерпретировать. Вместо этого присвойте функцию переменной. 
+  - **Примечание:** ECMA-262 определяет `блок` как список инструкций. Объявление функции не является инструкцией. [Read ECMA-262's note on this issue](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97).
 
     ```javascript
     // bad
@@ -303,7 +303,7 @@
     }
     ```
 
-  - Never name a parameter `arguments`, this will take precedence over the `arguments` object that is given to every function scope.
+  - Никогда не используйте в названии параметра `arguments`, т.к. в этом случае объект `arguments`, существующий в области видимости любой функции, не будет создан.
 
     ```javascript
     // bad
@@ -478,7 +478,7 @@
 
     // creating a variable declaration after you
     // reference the variable will work due to
-    // variable hoisting. Note: the assignment
+    // variable hoisting. Примечание: the assignment
     // value of `true` is not hoisted.
     function example() {
       console.log(declaredButNotAssigned); // => undefined
@@ -956,7 +956,7 @@
     ```
 
   - If for whatever reason you are doing something wild and `parseInt` is your bottleneck and need to use Bitshift for [performance reasons](http://jsperf.com/coercion-vs-casting/3), leave a comment explaining why and what you're doing.
-  - **Note:** Be careful when using bitshift operations. Numbers are represented as [64-bit values](http://es5.github.io/#x4.3.19), but Bitshift operations always return a 32-bit integer ([source](http://es5.github.io/#x11.7)). Bitshift can lead to unexpected behavior for integer values larger than 32 bits. [Discussion](https://github.com/airbnb/javascript/issues/109)
+  - **Примечание:** Be careful when using bitshift operations. Numbers are represented as [64-bit values](http://es5.github.io/#x4.3.19), but Bitshift operations always return a 32-bit integer ([source](http://es5.github.io/#x11.7)). Bitshift can lead to unexpected behavior for integer values larger than 32 bits. [Обсуждение](https://github.com/airbnb/javascript/issues/109)
 
     ```javascript
     // good
