@@ -12,7 +12,7 @@
   1. [Функции](#functions)
   1. [Свойства](#properties)
   1. [Переменные](#variables)
-  1. [Резервирование](#hoisting)
+  1. [Вытягивание](#hoisting)
   1. [Условные выражения и равенства](#conditionals)
   1. [Блоки](#blocks)
   1. [Комментарии](#comments)
@@ -144,7 +144,7 @@
     someStack.push('abracadabra');
     ```
 
-  - Когда нужно скопировать массив используйте Array#slice. [jsPerf](http://jsperf.com/converting-arguments-to-an-array/7)
+  - Для копирования массива используйте Array#slice. [jsPerf](http://jsperf.com/converting-arguments-to-an-array/7)
 
     ```javascript
     var len = items.length,
@@ -160,7 +160,7 @@
     itemsCopy = items.slice();
     ```
 
-  - Для преобразования [array-like](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Predefined_Core_Objects#Working_with_Array-like_objects) объекта в массив, используйте Array#slice.
+  - Для преобразования псевдо-массива (array-like) объекта в массив, используйте Array#slice.
 
     ```javascript
     function trigger() {
@@ -323,7 +323,7 @@
 
 ## <a name='properties'>Свойства</a>
 
-  - Use dot notation when accessing properties.
+  - Используйте точечную нотацию для доступа к свойствам.
 
     ```javascript
     var luke = {
@@ -338,7 +338,7 @@
     var isJedi = luke.jedi;
     ```
 
-  - Use subscript notation `[]` when accessing properties with a variable.
+  - Используйте запись квадратными скобками `[]` для доступа к свойствам с помощью переменной.
 
     ```javascript
     var luke = {
@@ -358,7 +358,7 @@
 
 ## <a name='variables'>Переменные</a>
 
-  - Always use `var` to declare variables. Not doing so will result in global variables. We want to avoid polluting the global namespace. Captain Planet warned us of that.
+  - Всегда используйте `var` для объявления переменной. Невыполнение этого требования приведет к появлению свойства в глобальном объекте. Мы хотим избежать загрязнения глобального пространства имен. Капитан Планета вас предупредил.
 
     ```javascript
     // bad
@@ -368,7 +368,7 @@
     var superPower = new SuperPower();
     ```
 
-  - Use one `var` declaration for multiple variables and declare each variable on a newline.
+  - Используйте одну директиву `var` при объявлении нескольких переменных, объявляя каждую с новой строки.
 
     ```javascript
     // bad
@@ -382,7 +382,7 @@
         dragonball = 'z';
     ```
 
-  - Declare unassigned variables last. This is helpful when later on you might need to assign a variable depending on one of the previous assigned variables.
+  - Объявляйте неинициализированные переменные последними. Это может быть полезно если в дальнейшем вам требуется инициализировать переменную зависящею от одной из инициализированных ранее переменных.
 
     ```javascript
     // bad
@@ -404,7 +404,7 @@
         i;
     ```
 
-  - Assign variables at the top of their scope. This helps avoid issues with variable declaration and assignment hoisting related issues.
+  - Инициализируйте переменные наверху их области видимости. Это поможет избежать проблем с объявлением переменных и проблем связанных с вытягиванием.
 
     ```javascript
     // bad
@@ -465,9 +465,9 @@
     **[[⬆]](#TOC)**
 
 
-## <a name='hoisting'>Резервирование</a>
+## <a name='hoisting'>Вытягивание</a>
 
-  - Variable declarations get hoisted to the top of their scope, their assignment does not.
+  - Обявления переменных будут перенесены наверх заключающей их области видимости. Присваивание перенесено не будет.
 
     ```javascript
     // we know this wouldn't work (assuming there
