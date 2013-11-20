@@ -20,7 +20,7 @@
   1. [Запятые](#commas)
   1. [Точки с запятой](#semicolons)
   1. [Приведение типов](#type-coercion)
-  1. [Соглашения об именовании](#naming-conventions)
+  1. [Соглашения об именованиях](#naming-conventions)
   1. [Методы доступа](#accessors)
   1. [Конструкторы](#constructors)
   1. [События](#events)
@@ -38,7 +38,7 @@
 
 ## <a name='types'>Типы</a>
 
-  - **Primitives**: When you access a primitive type you work directly on its value
+  - **Примитивы**: При обращении к примитивному типу вы работаете непосредственно с его значением
 
     + `string`
     + `number`
@@ -54,7 +54,7 @@
 
     console.log(foo, bar); // => 1, 9
     ```
-  - **Complex**: When you access a complex type you work on a reference to its value
+  - **Сложные типы**: При обращении к сложному типу вы работаете со ссылкой на его значение
 
     + `object`
     + `array`
@@ -73,7 +73,7 @@
 
 ## <a name='objects'>Объекты</a>
 
-  - Use the literal syntax for object creation.
+  - Используйте литеральный синтаксис для создания объектов.
 
     ```javascript
     // bad
@@ -83,7 +83,7 @@
     var item = {};
     ```
 
-  - Don't use [reserved words](http://es5.github.io/#x7.6.1) as keys. It won't work in IE8. [More info](https://github.com/airbnb/javascript/issues/61)
+  - Не используйте [зарезервированные слова](http://es5.github.io/#x7.6.1) в качестве ключей. Это не будет работать в IE8. [Детали](https://github.com/airbnb/javascript/issues/61)
 
     ```javascript
     // bad
@@ -99,7 +99,7 @@
     };
     ```
 
-  - Use readable synonyms in place of reserved words.
+  - Используйте различимые синонимы вместо зарезервированных слов.
 
     ```javascript
     // bad
@@ -121,7 +121,7 @@
 
 ## <a name='arrays'>Массивы</a>
 
-  - Use the literal syntax for array creation
+  - Используйте литеральный синтаксис для создания массивов
 
     ```javascript
     // bad
@@ -131,7 +131,7 @@
     var items = [];
     ```
 
-  - If you don't know array length use Array#push.
+  - Если неизвестна длинна массива, используйте Array#push.
 
     ```javascript
     var someStack = [];
@@ -144,7 +144,7 @@
     someStack.push('abracadabra');
     ```
 
-  - When you need to copy an array use Array#slice. [jsPerf](http://jsperf.com/converting-arguments-to-an-array/7)
+  - Когда нужно скопировать массив используйте Array#slice. [jsPerf](http://jsperf.com/converting-arguments-to-an-array/7)
 
     ```javascript
     var len = items.length,
@@ -160,7 +160,7 @@
     itemsCopy = items.slice();
     ```
 
-  - To convert an array-like object to an array, use Array#slice.
+  - Для преобразования [array-like](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Predefined_Core_Objects#Working_with_Array-like_objects) объекта в массив, используйте Array#slice.
 
     ```javascript
     function trigger() {
@@ -986,7 +986,7 @@
     **[[⬆]](#TOC)**
 
 
-## <a name='naming-conventions'>Соглашения об именовании</a>
+## <a name='naming-conventions'>Соглашения об именованиях</a>
 
   - Avoid single letter names. Be descriptive with your naming.
 
