@@ -308,12 +308,12 @@
     ```javascript
     // плохо
     function nope(name, options, arguments) {
-      // ...stuff...
+      // ...делаем что-нибудь...
     }
 
     // хорошо
     function yup(name, options, args) {
-      // ...stuff...
+      // ...делаем что-нибудь...
     }
     ```
 
@@ -410,9 +410,9 @@
     // плохо
     function() {
       test();
-      console.log('doing stuff..');
+      console.log('делаем что-нибудь..');
 
-      //..other stuff..
+      //..еще делаем что-нибудь..
 
       var name = getName();
 
@@ -428,9 +428,9 @@
       var name = getName();
 
       test();
-      console.log('doing stuff..');
+      console.log('делаем что-нибудь..');
 
-      //..other stuff..
+      //..еще делаем что-нибудь..
 
       if (name === 'test') {
         return false;
@@ -579,22 +579,22 @@
     ```javascript
     // плохо
     if (name !== '') {
-      // ...stuff...
+      // ...делаем что-нибудь...
     }
 
     // хорошо
     if (name) {
-      // ...stuff...
+      // ...делаем что-нибудь...
     }
 
     // плохо
     if (collection.length > 0) {
-      // ...stuff...
+      // ...делаем что-нибудь...
     }
 
     // хорошо
     if (collection.length) {
-      // ...stuff...
+      // ...делаем что-нибудь...
     }
     ```
 
@@ -645,7 +645,7 @@
     // @return <Element> element
     function make(tag) {
 
-      // ...stuff...
+      // ...делаем что-нибудь...
 
       return element;
     }
@@ -660,7 +660,7 @@
      */
     function make(tag) {
 
-      // ...stuff...
+      // ...делаем что-нибудь...
 
       return element;
     }
@@ -775,14 +775,14 @@
     ```javascript
     // плохо
     (function(global) {
-      // ...stuff...
+      // ...делаем что-нибудь...
     })(this);
     ```
 
     ```javascript
     // хорошо
     (function(global) {
-      // ...stuff...
+      // ...делаем что-нибудь...
     })(this);
 
     ```
@@ -993,12 +993,12 @@
     ```javascript
     // плохо
     function q() {
-      // ...stuff...
+      // ...делаем что-нибудь...
     }
 
     // хорошо
     function query() {
-      // ..stuff..
+      // ..делаем что-нибудь..
     }
     ```
 
@@ -1319,7 +1319,7 @@
     function setSidebar() {
       $('.sidebar').hide();
 
-      // ...stuff...
+      // ...делаем что-нибудь...
 
       $('.sidebar').css({
         'background-color': 'pink'
@@ -1331,7 +1331,7 @@
       var $sidebar = $('.sidebar');
       $sidebar.hide();
 
-      // ...stuff...
+      // ...делаем что-нибудь...
 
       $sidebar.css({
         'background-color': 'pink'
