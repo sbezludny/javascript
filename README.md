@@ -76,23 +76,23 @@
   - Используйте литеральный синтаксис для создания объектов.
 
     ```javascript
-    // bad
+    // плохо
     var item = new Object();
 
-    // good
+    // хорошо
     var item = {};
     ```
 
   - Не используйте [зарезервированные слова](http://es5.github.io/#x7.6.1) в качестве ключей. Это не будет работать в IE8. [Детали](https://github.com/airbnb/javascript/issues/61)
 
     ```javascript
-    // bad
+    // плохо
     var superman = {
       default: { clark: 'kent' },
       private: true
     };
 
-    // good
+    // хорошо
     var superman = {
       defaults: { clark: 'kent' },
       hidden: true
@@ -102,17 +102,17 @@
   - Используйте различимые синонимы вместо зарезервированных слов.
 
     ```javascript
-    // bad
+    // плохо
     var superman = {
       class: 'alien'
     };
 
-    // bad
+    // плохо
     var superman = {
       klass: 'alien'
     };
 
-    // good
+    // хорошо
     var superman = {
       type: 'alien'
     };
@@ -124,10 +124,10 @@
   - Используйте литеральный синтаксис для создания массивов
 
     ```javascript
-    // bad
+    // плохо
     var items = new Array();
 
-    // good
+    // хорошо
     var items = [];
     ```
 
@@ -137,10 +137,10 @@
     var someStack = [];
 
 
-    // bad
+    // плохо
     someStack[someStack.length] = 'abracadabra';
 
-    // good
+    // хорошо
     someStack.push('abracadabra');
     ```
 
@@ -151,12 +151,12 @@
         itemsCopy = [],
         i;
 
-    // bad
+    // плохо
     for (i = 0; i < len; i++) {
       itemsCopy[i] = items[i];
     }
 
-    // good
+    // хорошо
     itemsCopy = items.slice();
     ```
 
@@ -177,16 +177,16 @@
   - Используйте одинарные кавычки `''` для строк
 
     ```javascript
-    // bad
+    // плохо
     var name = "Bob Parr";
 
-    // good
+    // хорошо
     var name = 'Bob Parr';
 
-    // bad
+    // плохо
     var fullName = "Bob " + this.lastName;
 
-    // good
+    // хорошо
     var fullName = 'Bob ' + this.lastName;
     ```
 
@@ -194,10 +194,10 @@
   - Примечание: При злоупотреблении, конкатенация длинных строк может повлиять на производительность. [jsPerf](http://jsperf.com/ya-string-concat) & [Обсуждение](https://github.com/airbnb/javascript/issues/40)
 
     ```javascript
-    // bad
+    // плохо
     var errorMessage = 'This is a super long error that was thrown because of Batman. When you stop to think about how Batman had anything to do with this, you would get nowhere fast.';
 
-    // bad
+    // плохо
     var errorMessage = 'This is a super long error that \
     was thrown because of Batman. \
     When you stop to think about \
@@ -206,7 +206,7 @@
     fast.';
 
 
-    // good
+    // хорошо
     var errorMessage = 'This is a super long error that ' +
       'was thrown because of Batman.' +
       'When you stop to think about ' +
@@ -236,7 +236,7 @@
 
     length = messages.length;
 
-    // bad
+    // плохо
     function inbox(messages) {
       items = '<ul>';
 
@@ -247,7 +247,7 @@
       return items + '</ul>';
     }
 
-    // good
+    // хорошо
     function inbox(messages) {
       items = [];
 
@@ -287,14 +287,14 @@
   - **Примечание:** ECMA-262 определяет `блок` как список инструкций. Объявление функции не является инструкцией. [Read ECMA-262's note on this issue](http://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf#page=97).
 
     ```javascript
-    // bad
+    // плохо
     if (currentUser) {
       function test() {
         console.log('Nope.');
       }
     }
 
-    // good
+    // хорошо
     var test;
     if (currentUser) {
       test = function test() {
@@ -306,12 +306,12 @@
   - Никогда не используйте в названии параметра `arguments`, т.к. в этом случае объект `arguments`, существующий в области видимости любой функции, не будет создан.
 
     ```javascript
-    // bad
+    // плохо
     function nope(name, options, arguments) {
       // ...stuff...
     }
 
-    // good
+    // хорошо
     function yup(name, options, args) {
       // ...stuff...
     }
@@ -331,10 +331,10 @@
       age: 28
     };
 
-    // bad
+    // плохо
     var isJedi = luke['jedi'];
 
-    // good
+    // хорошо
     var isJedi = luke.jedi;
     ```
 
@@ -361,22 +361,22 @@
   - Всегда используйте `var` для объявления переменной. Невыполнение этого требования приведет к появлению свойства в глобальном объекте. Мы хотим избежать загрязнения глобального пространства имен. Капитан Планета вас предупредил.
 
     ```javascript
-    // bad
+    // плохо
     superPower = new SuperPower();
 
-    // good
+    // хорошо
     var superPower = new SuperPower();
     ```
 
   - Используйте одну директиву `var` при объявлении нескольких переменных, объявляя каждую с новой строки.
 
     ```javascript
-    // bad
+    // плохо
     var items = getItems();
     var goSportsTeam = true;
     var dragonball = 'z';
 
-    // good
+    // хорошо
     var items = getItems(),
         goSportsTeam = true,
         dragonball = 'z';
@@ -385,18 +385,18 @@
   - Объявляйте неинициализированные переменные последними. Это может быть полезно если в дальнейшем вам требуется инициализировать переменную зависящею от одной из инициализированных ранее переменных.
 
     ```javascript
-    // bad
+    // плохо
     var i, len, dragonball,
         items = getItems(),
         goSportsTeam = true;
 
-    // bad
+    // плохо
     var i, items = getItems(),
         dragonball,
         goSportsTeam = true,
         len;
 
-    // good
+    // хорошо
     var items = getItems(),
         goSportsTeam = true,
         dragonball,
@@ -407,7 +407,7 @@
   - Инициализируйте переменные наверху их области видимости. Это поможет избежать проблем с объявлением переменных и проблем связанных с вытягиванием.
 
     ```javascript
-    // bad
+    // плохо
     function() {
       test();
       console.log('doing stuff..');
@@ -423,7 +423,7 @@
       return name;
     }
 
-    // good
+    // хорошо
     function() {
       var name = getName();
 
@@ -439,7 +439,7 @@
       return name;
     }
 
-    // bad
+    // плохо
     function() {
       var name = getName();
 
@@ -450,7 +450,7 @@
       return true;
     }
 
-    // good
+    // хорошо
     function() {
       if (!arguments.length) {
         return false;
@@ -577,22 +577,22 @@
   - Используйте сокращения.
 
     ```javascript
-    // bad
+    // плохо
     if (name !== '') {
       // ...stuff...
     }
 
-    // good
+    // хорошо
     if (name) {
       // ...stuff...
     }
 
-    // bad
+    // плохо
     if (collection.length > 0) {
       // ...stuff...
     }
 
-    // good
+    // хорошо
     if (collection.length) {
       // ...stuff...
     }
@@ -608,22 +608,22 @@
   - Используйте фигурные скобки во всех многострочных блоках.
 
     ```javascript
-    // bad
+    // плохо
     if (test)
       return false;
 
-    // good
+    // хорошо
     if (test) return false;
 
-    // good
+    // хорошо
     if (test) {
       return false;
     }
 
-    // bad
+    // плохо
     function() { return false; }
 
-    // good
+    // хорошо
     function() {
       return false;
     }
@@ -637,7 +637,7 @@
   - Используйте `/** ... */` для многострочных комментариев. Включите описание, указажите типы и значения для всех параметров и возвращаемых значений.
 
     ```javascript
-    // bad
+    // плохо
     // make() возвращает новый элемент
     // на основании переданного имени тега
     //
@@ -650,7 +650,7 @@
       return element;
     }
 
-    // good
+    // хорошо
     /**
      * make() возвращает новый элемент
      * на основании переданного имени тега
@@ -669,14 +669,14 @@
   - Используйте `//` для однострочных комментариев. Размещайте однострочный комментарий с новой строки над предметом комментирования. Оставляйте пустую строку перед комментарием.
 
     ```javascript
-    // bad
+    // плохо
     var active = true;  // текущий таб
 
-    // good
+    // хорошо
     // текущий таб
     var active = true;
 
-    // bad
+    // плохо
     function getType() {
       console.log('fetching type...');
       // установим тип по-умолчанию 'no type'
@@ -685,7 +685,7 @@
       return type;
     }
 
-    // good
+    // хорошо
     function getType() {
       console.log('fetching type...');
 
@@ -730,17 +730,17 @@
   - Используйте мягкие табы равные 2 пробелам.
 
     ```javascript
-    // bad
+    // плохо
     function() {
     ∙∙∙∙var name;
     }
 
-    // bad
+    // плохо
     function() {
     ∙var name;
     }
 
-    // good
+    // хорошо
     function() {
     ∙∙var name;
     }
@@ -748,23 +748,23 @@
   - Ставьте 1 пробел перед открывающей фигурной скобкой.
 
     ```javascript
-    // bad
+    // плохо
     function test(){
       console.log('test');
     }
 
-    // good
+    // хорошо
     function test() {
       console.log('test');
     }
 
-    // bad
+    // плохо
     dog.set('attr',{
       age: '1 year',
       breed: 'Bernese Mountain Dog'
     });
 
-    // good
+    // хорошо
     dog.set('attr', {
       age: '1 year',
       breed: 'Bernese Mountain Dog'
@@ -773,14 +773,14 @@
   - Оставляйте пустую строку в конце файла.
 
     ```javascript
-    // bad
+    // плохо
     (function(global) {
       // ...stuff...
     })(this);
     ```
 
     ```javascript
-    // good
+    // хорошо
     (function(global) {
       // ...stuff...
     })(this);
@@ -790,10 +790,10 @@
   - Используйте отступы для длинных цепочек методов.
 
     ```javascript
-    // bad
+    // плохо
     $('#items').find('.selected').highlight().end().find('.open').updateCount();
 
-    // good
+    // хорошо
     $('#items')
       .find('.selected')
         .highlight()
@@ -801,13 +801,13 @@
       .find('.open')
         .updateCount();
 
-    // bad
+    // плохо
     var leds = stage.selectAll('.led').data(data).enter().append('svg:svg').class('led', true)
         .attr('width',  (radius + margin) * 2).append('svg:g')
         .attr('transform', 'translate(' + (radius + margin) + ',' + (radius + margin) + ')')
         .call(tron.led);
 
-    // good
+    // хорошо
     var leds = stage.selectAll('.led')
         .data(data)
       .enter().append('svg:svg')
@@ -825,17 +825,17 @@
   - Запятые в начале строки: **Неа.**
 
     ```javascript
-    // bad
+    // плохо
     var once
       , upon
       , aTime;
 
-    // good
+    // хорошо
     var once,
         upon,
         aTime;
 
-    // bad
+    // плохо
     var hero = {
         firstName: 'Bob'
       , lastName: 'Parr'
@@ -843,7 +843,7 @@
       , superPower: 'strength'
     };
 
-    // good
+    // хорошо
     var hero = {
       firstName: 'Bob',
       lastName: 'Parr',
@@ -857,7 +857,7 @@
   > Издание 5 разъясняет тот факт, что замыкающая запятую в конце ArrayInitialiser не добавляет к длине массива. Это не семантическое изменение от издания 3, но в некоторые реализациии могли неправильно это толковать.
 
     ```javascript
-    // bad
+    // плохо
     var hero = {
       firstName: 'Kevin',
       lastName: 'Flynn',
@@ -868,7 +868,7 @@
       'Superman',
     ];
 
-    // good
+    // хорошо
     var hero = {
       firstName: 'Kevin',
       lastName: 'Flynn'
@@ -888,19 +888,19 @@
   - **Ага.**
 
     ```javascript
-    // bad
+    // плохо
     (function() {
       var name = 'Skywalker'
       return name
     })()
 
-    // good
+    // хорошо
     (function() {
       var name = 'Skywalker';
       return name;
     })();
 
-    // good
+    // хорошо
     ;(function() {
       var name = 'Skywalker';
       return name;
@@ -918,16 +918,16 @@
     ```javascript
     //  => this.reviewScore = 9;
 
-    // bad
+    // плохо
     var totalScore = this.reviewScore + '';
 
-    // good
+    // хорошо
     var totalScore = '' + this.reviewScore;
 
-    // bad
+    // плохо
     var totalScore = '' + this.reviewScore + ' total score';
 
-    // good
+    // хорошо
     var totalScore = this.reviewScore + ' total score';
     ```
 
@@ -936,22 +936,22 @@
     ```javascript
     var inputValue = '4';
 
-    // bad
+    // плохо
     var val = new Number(inputValue);
 
-    // bad
+    // плохо
     var val = +inputValue;
 
-    // bad
+    // плохо
     var val = inputValue >> 0;
 
-    // bad
+    // плохо
     var val = parseInt(inputValue);
 
-    // good
+    // хорошо
     var val = Number(inputValue);
 
-    // good
+    // хорошо
     var val = parseInt(inputValue, 10);
     ```
 
@@ -959,7 +959,7 @@
   - **Примечание:** Будьте осторожны при использовании побитовых сдвигов. Числа представлены как [64-битные значения](http://es5.github.io/#x4.3.19), в то время как результат операций побитовых сдвигов является знаковым 32-битовым целым([источник](http://es5.github.io/#x11.7)). Побитовый сдвиг может привести к неожиданному поведению при целых больше чем 32 бит. [Обсуждение](https://github.com/airbnb/javascript/issues/109)
 
     ```javascript
-    // good
+    // хорошо
     /**
      * parseInt был причиной медленности моего кода.
      * Побитовый сдвиг преобразует строку в число
@@ -973,13 +973,13 @@
     ```javascript
     var age = 0;
 
-    // bad
+    // плохо
     var hasAge = new Boolean(age);
 
-    // good
+    // хорошо
     var hasAge = Boolean(age);
 
-    // good
+    // хорошо
     var hasAge = !!age;
     ```
 
@@ -991,12 +991,12 @@
   - Избегайте однобуквенных названий. Будьте описательны в именованиях.
 
     ```javascript
-    // bad
+    // плохо
     function q() {
       // ...stuff...
     }
 
-    // good
+    // хорошо
     function query() {
       // ..stuff..
     }
@@ -1005,7 +1005,7 @@
   - Используйте `camelCase` для именования объектов, функций, и экземпляров
 
     ```javascript
-    // bad
+    // плохо
     var OBJEcttsssss = {};
     var this_is_my_object = {};
     function c() {};
@@ -1013,7 +1013,7 @@
       name: 'Bob Parr'
     });
 
-    // good
+    // хорошо
     var thisIsMyObject = {};
     function thisIsMyFunction() {};
     var user = new User({
@@ -1024,7 +1024,7 @@
   - Используйте `PascalCase` при именовании конструкторов и классов
 
     ```javascript
-    // bad
+    // плохо
     function user(options) {
       this.name = options.name;
     }
@@ -1033,7 +1033,7 @@
       name: 'nope'
     });
 
-    // good
+    // хорошо
     function User(options) {
       this.name = options.name;
     }
@@ -1046,18 +1046,18 @@
   - Используйте нижнее подчеркивание в начале `_` для именования приватных свойств
 
     ```javascript
-    // bad
+    // плохо
     this.__firstName__ = 'Panda';
     this.firstName_ = 'Panda';
 
-    // good
+    // хорошо
     this._firstName = 'Panda';
     ```
 
   - Для сохранения ссылки на `this` используйте `_this`.
 
     ```javascript
-    // bad
+    // плохо
     function() {
       var self = this;
       return function() {
@@ -1065,7 +1065,7 @@
       };
     }
 
-    // bad
+    // плохо
     function() {
       var that = this;
       return function() {
@@ -1073,7 +1073,7 @@
       };
     }
 
-    // good
+    // хорошо
     function() {
       var _this = this;
       return function() {
@@ -1085,12 +1085,12 @@
   - Именуйте функции. Это полезно поможет при трассировке.
 
     ```javascript
-    // bad
+    // плохо
     var log = function(msg) {
       console.log(msg);
     };
 
-    // good
+    // хорошо
     var log = function log(msg) {
       console.log(msg);
     };
@@ -1105,28 +1105,28 @@
   - Если вы создаете аксессорные функции используйте getVal() и setVal('hello')
 
     ```javascript
-    // bad
+    // плохо
     dragon.age();
 
-    // good
+    // хорошо
     dragon.getAge();
 
-    // bad
+    // плохо
     dragon.age(25);
 
-    // good
+    // хорошо
     dragon.setAge(25);
     ```
 
   - Для булевого свойства используйте isVal() или hasVal()
 
     ```javascript
-    // bad
+    // плохо
     if (!dragon.age()) {
       return false;
     }
 
-    // good
+    // хорошо
     if (!dragon.hasAge()) {
       return false;
     }
@@ -1155,14 +1155,14 @@
 
 ## <a name='constructors'>Конструкторы</a>
 
-  - Assign methods to the prototype object, instead of overwriting the prototype with a new object. Overwriting the prototype makes inheritance impossible: by resetting the prototype you'll overwrite the base!
+  - Присваивайте методы к прототипу, вместо перезаписи прототипа новым объектом. Замена прототипа делает невозможным наследование: сбрасывание прототипа приведет к перезваписи базового класса!
 
     ```javascript
     function Jedi() {
       console.log('new jedi');
     }
 
-    // bad
+    // плохо
     Jedi.prototype = {
       fight: function fight() {
         console.log('fighting');
@@ -1173,7 +1173,7 @@
       }
     };
 
-    // good
+    // хорошо
     Jedi.prototype.fight = function fight() {
       console.log('fighting');
     };
@@ -1183,10 +1183,10 @@
     };
     ```
 
-  - Methods can return `this` to help with method chaining.
+  - Методы могут возвращать `this` для построения цепочек.
 
     ```javascript
-    // bad
+    // плохо
     Jedi.prototype.jump = function() {
       this.jumping = true;
       return true;
@@ -1200,7 +1200,7 @@
     luke.jump(); // => true
     luke.setHeight(20) // => undefined
 
-    // good
+    // хорошо
     Jedi.prototype.jump = function() {
       this.jumping = true;
       return this;
@@ -1218,7 +1218,7 @@
     ```
 
 
-  - It's okay to write a custom toString() method, just make sure it works successfully and causes no side effects.
+  - Использование собственного метода toString() является нормальной практикой, однако, следует убедиться что он выполняется успешно и не вызывает побочных эффектов.
 
     ```javascript
     function Jedi(options) {
@@ -1240,10 +1240,10 @@
 
 ## <a name='events'>События</a>
 
-  - When attaching data payloads to events (whether DOM events or something more proprietary like Backbone events), pass a hash instead of a raw value. This allows a subsequent contributor to add more data to the event payload without finding and updating every handler for the event. For example, instead of:
+  - При установке обработчиков событий (будь то события DOM или что-то более проприетарное как события в Backbone), следует передавать хеш-таблицу вместо необработанного значения. Это позволит следующему разработчику иметь возможномть добавить больше данных передаваемых событием, без неоходимости искать и обновлять каждый обрабочтик события. Например, вместо:
 
     ```js
-    // bad
+    // плохо
     $(this).trigger('listingUpdated', listing.id);
 
     ...
@@ -1253,10 +1253,10 @@
     });
     ```
 
-    prefer:
+    предпочтительнее:
 
     ```js
-    // good
+    // хорошо
     $(this).trigger('listingUpdated', { listingId : listing.id });
 
     ...
@@ -1271,10 +1271,10 @@
 
 ## <a name='modules'>Модули</a>
 
-  - The module should start with a `!`. This ensures that if a malformed module forgets to include a final semicolon there aren't errors in production when the scripts get concatenated. [Explanation](https://github.com/airbnb/javascript/issues/44#issuecomment-13063933)
-  - The file should be named with camelCase, live in a folder with the same name, and match the name of the single export.
-  - Add a method called noConflict() that sets the exported module to the previous version and returns this one.
-  - Always declare `'use strict';` at the top of the module.
+  - Модуль должен начинаться с `!`. Это гарантирует, что если неправильный модуль не включает конечную точку с запятой не возникает ошибки после объединения сценариев. [Объяснение](https://github.com/airbnb/javascript/issues/44#issuecomment-13063933)
+  - Название файла должно быть в camelCase, он должнен находиться в папке с тем же именем, и соответсвовать названию экпортируемой переменной.
+  - Добавте метод с названием noConflict() который запишет в экспортируемую переменную предыдущую версию и вернет её.
+  - Всегда объявляйте `'use strict';` в начале модуля.
 
     ```javascript
     // fancyInput/fancyInput.js
@@ -1302,20 +1302,20 @@
 
 ## <a name='jquery'>jQuery</a>
 
-  - Prefix jQuery object variables with a `$`.
+  - Используйте префикс `$` для jQuery объектов.
 
     ```javascript
-    // bad
+    // плохо
     var sidebar = $('.sidebar');
 
-    // good
+    // хорошо
     var $sidebar = $('.sidebar');
     ```
 
-  - Cache jQuery lookups.
+  - Кешируйте результаты поиска jQuery.
 
     ```javascript
-    // bad
+    // плохо
     function setSidebar() {
       $('.sidebar').hide();
 
@@ -1326,7 +1326,7 @@
       });
     }
 
-    // good
+    // хорошо
     function setSidebar() {
       var $sidebar = $('.sidebar');
       $sidebar.hide();
@@ -1339,23 +1339,23 @@
     }
     ```
 
-  - For DOM queries use Cascading `$('.sidebar ul')` or parent > child `$('.sidebar > ul')`. [jsPerf](http://jsperf.com/jquery-find-vs-context-sel/16)
-  - Use `find` with scoped jQuery object queries.
+  - Для DOM запросов используйте вложенные `$('.sidebar ul')` или дочерние `$('.sidebar > ul')` селекторы. [jsPerf](http://jsperf.com/jquery-find-vs-context-sel/16)
+  - Используйте `find` для контекстных запросов к jQuery объектам.
 
     ```javascript
-    // bad
+    // плохо
     $('ul', '.sidebar').hide();
 
-    // bad
+    // плохо
     $('.sidebar').find('ul').hide();
 
-    // good
+    // хорошо
     $('.sidebar ul').hide();
 
-    // good
+    // хорошо
     $('.sidebar > ul').hide();
 
-    // good
+    // хорошо
     $sidebar.find('ul');
     ```
 
@@ -1364,14 +1364,14 @@
 
 ## <a name='es5'>Совместимость с ECMAScript 5</a>
 
-  - Refer to [Kangax](https://twitter.com/kangax/)'s ES5 [compatibility table](http://kangax.github.com/es5-compat-table/)
+  - Смотрите [Kangax](https://twitter.com/kangax/) ES5 [compatibility table](http://kangax.github.com/es5-compat-table/)
 
   **[[⬆]](#TOC)**
 
 
 ## <a name='testing'>Тестирование</a>
 
-  - **Yup.**
+  - **Ага.**
 
     ```javascript
     function() {
@@ -1391,7 +1391,7 @@
   - [jQuery Find vs Context, Selector](http://jsperf.com/jquery-find-vs-context-sel/13)
   - [innerHTML vs textContent for script text](http://jsperf.com/innerhtml-vs-textcontent-for-script-text)
   - [Long String Concatenation](http://jsperf.com/ya-string-concat)
-  - Loading...
+  - Загрузка...
 
   **[[⬆]](#TOC)**
 
@@ -1399,28 +1399,28 @@
 ## <a name='resources'>Ресурсы</a>
 
 
-**Read This**
+**Прочитайте это**
 
   - [Annotated ECMAScript 5.1](http://es5.github.com/)
 
-**Other Styleguides**
+**Другие руководства по стилю**
 
   - [Google JavaScript Style Guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml)
   - [jQuery Core Style Guidelines](http://docs.jquery.com/JQuery_Core_Style_Guidelines)
   - [Principles of Writing Consistent, Idiomatic JavaScript](https://github.com/rwldrn/idiomatic.js/)
 
-**Other Styles**
+**Другие стили**
 
   - [Naming this in nested functions](https://gist.github.com/4135065) - Christian Johansen
   - [Conditional Callbacks](https://github.com/airbnb/javascript/issues/52)
   - [Popular JavaScript Coding Conventions on Github](http://sideeffect.kr/popularconvention/#javascript)
 
-**Further Reading**
+**Дополнительные материалы**
 
   - [Understanding JavaScript Closures](http://javascriptweblog.wordpress.com/2010/10/25/understanding-javascript-closures/) - Angus Croll
   - [Basic JavaScript for the impatient programmer](http://www.2ality.com/2013/06/basic-javascript.html) - Dr. Axel Rauschmayer
 
-**Books**
+**Книги**
 
   - [JavaScript: The Good Parts](http://www.amazon.com/JavaScript-Good-Parts-Douglas-Crockford/dp/0596517742) - Douglas Crockford
   - [JavaScript Patterns](http://www.amazon.com/JavaScript-Patterns-Stoyan-Stefanov/dp/0596806752) - Stoyan Stefanov
@@ -1435,7 +1435,7 @@
   - [Superhero.js](http://superherojs.com/) - Kim Joar Bekkelund, Mads Mobæk, & Olav Bjorkoy
   - [JSBooks](http://jsbooks.revolunet.com/)
 
-**Blogs**
+**Блоги**
 
   - [DailyJS](http://dailyjs.com/)
   - [JavaScript Weekly](http://javascriptweekly.com/)
@@ -1453,7 +1453,7 @@
 
 ## <a name='in-the-wild'>В реальных условиях</a>
 
-  This is a list of organizations that are using this style guide. Send us a pull request or open an issue and we'll add you to the list.
+  Это список организаций, которые используют это руководство по стилю. Отправьте запрос и мы добавим вас в список.
 
   - **Aan Zee**: [AanZee/javascript](https://github.com/AanZee/javascript)
   - **Airbnb**: [airbnb/javascript](https://github.com/airbnb/javascript)
@@ -1478,7 +1478,7 @@
 
 ## <a name='translation'>Перевод</a>
 
-  This style guide is also available in other languages:
+  Это руководство доступно на других языках:
 
   - :de: **German**: [timofurrer/javascript-style-guide](https://github.com/timofurrer/javascript-style-guide)
   - :jp: **Japanese**: [mitsuruog/javacript-style-guide](https://github.com/mitsuruog/javacript-style-guide)
