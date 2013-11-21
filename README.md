@@ -21,7 +21,7 @@
   1. [Точки с запятой](#semicolons)
   1. [Приведение типов](#type-coercion)
   1. [Соглашения об именованиях](#naming-conventions)
-  1. [Методы доступа](#accessors)
+  1. [Аксессоры](#accessors)
   1. [Конструкторы](#constructors)
   1. [События](#events)
   1. [Модули](#modules)
@@ -558,7 +558,7 @@
 ## <a name='conditionals'>Условные выражения и равенства</a>
 
   - Используйте `===` и `!==` вместо `==` и `!=`.
-  - Вычисление условный выражений происходит путем приведения с помощью метода `ToBoolean` и подчиняется следующим правилам:
+  - Вычисление условных выражений происходит путем приведения с помощью метода `ToBoolean` и подчиняется следующим правилам:
 
     + **Object** преобразуюeтся в **true**
     + **Undefined** преобразуется в **false**
@@ -666,20 +666,20 @@
     }
     ```
 
-  - Используйте `//` для однострочных комментариев. Place single line comments on a newline above the subject of the comment. Put an empty line before the comment.
+  - Используйте `//` для однострочных комментариев. Размещайте однострочный комментарий с новой строки над предметом комментирования. Оставляйте пустую строку перед комментарием.
 
     ```javascript
     // bad
-    var active = true;  // is current tab
+    var active = true;  // текущий таб
 
     // good
-    // is current tab
+    // текущий таб
     var active = true;
 
     // bad
     function getType() {
       console.log('fetching type...');
-      // set the default type to 'no type'
+      // установим тип по-умолчанию 'no type'
       var type = this._type || 'no type';
 
       return type;
@@ -689,33 +689,33 @@
     function getType() {
       console.log('fetching type...');
 
-      // set the default type to 'no type'
+      // установим тип по-умолчанию 'no type'
       var type = this._type || 'no type';
 
       return type;
     }
     ```
 
-  - Prefixing your comments with `FIXME` or `TODO` helps other developers quickly understand if you're pointing out a problem that needs to be revisited, or if you're suggesting a solution to the problem that needs to be implemented. These are different than regular comments because they are actionable. The actions are `FIXME -- need to figure this out` or `TODO -- need to implement`.
+  - Использование префиксов `FIXME` или `TODO` помогает разработчикам понять что вы указываете на проблему, которую необходимо пересмотреть, или если вы предлагаете решение проблемы, которая должна быть решена. Эти отличаются от обычных комментариев поскольку они предполагают принятие мер. Действия: `FIXME -- необходимо выяснить это` или `TODO -- необходимо реализовать`.
 
-  - Use `// FIXME:` to annotate problems
+  - Используйте `// FIXME:` чтобы комментировать проблемы
 
     ```javascript
     function Calculator() {
 
-      // FIXME: shouldn't use a global here
+      // FIXME: не следует использовать глобальный контекст
       total = 0;
 
       return this;
     }
     ```
 
-  - Use `// TODO:` to annotate solutions to problems
+  - Используйте `// TODO:` для записи решения проблем
 
     ```javascript
     function Calculator() {
 
-      // TODO: total should be configurable by an options param
+      // TODO: total должен конфмгурироваться парамером options
       this.total = 0;
 
       return this;
@@ -727,7 +727,7 @@
 
 ## <a name='whitespace'>Пробелы</a>
 
-  - Use soft tabs set to 2 spaces
+  - Используйте мягкие табы равные 2 пробелам.
 
     ```javascript
     // bad
@@ -745,7 +745,7 @@
     ∙∙var name;
     }
     ```
-  - Place 1 space before the leading brace.
+  - Ставьте 1 пробел перед открывающей фигурной скобкой.
 
     ```javascript
     // bad
@@ -770,7 +770,7 @@
       breed: 'Bernese Mountain Dog'
     });
     ```
-  - Place an empty newline at the end of the file.
+  - Оставляйте пустую строку в конце файла.
 
     ```javascript
     // bad
@@ -787,7 +787,7 @@
 
     ```
 
-  - Use indentation when making long method chains.
+  - Используйте отступы для длинных цепочек методов.
 
     ```javascript
     // bad
@@ -822,7 +822,7 @@
 
 ## <a name='commas'>Запятые</a>
 
-  - Leading commas: **Nope.**
+  - Запятые в начале строки: **Неа.**
 
     ```javascript
     // bad
@@ -852,9 +852,9 @@
     };
     ```
 
-  - Additional trailing comma: **Nope.** This can cause problems with IE6/7 and IE9 if it's in quirksmode. Also, in some implementations of ES3 would add length to an array if it had an additional trailing comma. This was clarified in ES5 ([source](http://es5.github.io/#D)):
+  - Дополнительная замыкающая запятая: **Неа.** Это вызовет проблемы в IE6/7 и IE9 если он в режиме совместимости. Также, в некоторых реализациях ES3 будет добавлен пустой элемент в массив если он имеет замыкающую запятую. Это было разъяснено в ES5 ([источник](http://es5.github.io/#D)):
 
-  > Edition 5 clarifies the fact that a trailing comma at the end of an ArrayInitialiser does not add to the length of the array. This is not a semantic change from Edition 3 but some implementations may have previously misinterpreted this.
+  > Издание 5 разъясняет тот факт, что замыкающая запятую в конце ArrayInitialiser не добавляет к длине массива. Это не семантическое изменение от издания 3, но в некоторые реализациии могли неправильно это толковать.
 
     ```javascript
     // bad
@@ -885,7 +885,7 @@
 
 ## <a name='semicolons'>Точки с запятой</a>
 
-  - **Yup.**
+  - **Ага.**
 
     ```javascript
     // bad
@@ -912,8 +912,8 @@
 
 ## <a name='type-coercion'>Приведение типов</a>
 
-  - Perform type coercion at the beginning of the statement.
-  - Strings:
+  - Выполяйте приведение типов в начале выражения.
+  - Строки:
 
     ```javascript
     //  => this.reviewScore = 9;
@@ -931,7 +931,7 @@
     var totalScore = this.reviewScore + ' total score';
     ```
 
-  - Use `parseInt` for Numbers and always with a radix for type casting.
+  - Используйте `parseInt` для Number всегда указывая основание системы счисления -- radix.
 
     ```javascript
     var inputValue = '4';
@@ -955,15 +955,15 @@
     var val = parseInt(inputValue, 10);
     ```
 
-  - If for whatever reason you are doing something wild and `parseInt` is your bottleneck and need to use Bitshift for [performance reasons](http://jsperf.com/coercion-vs-casting/3), leave a comment explaining why and what you're doing.
-  - **Примечание:** Be careful when using bitshift operations. Numbers are represented as [64-bit values](http://es5.github.io/#x4.3.19), but Bitshift operations always return a 32-bit integer ([source](http://es5.github.io/#x11.7)). Bitshift can lead to unexpected behavior for integer values larger than 32 bits. [Обсуждение](https://github.com/airbnb/javascript/issues/109)
+  - Если по какой-либо причине вы делаете что-то дикое и `parseInt` является узким местом и нужно использовать побитовый сдвиг из [соображений производительности](http://jsperf.com/coercion-vs-casting/3), оставьте комментарий объясняющий что вы делаете.
+  - **Примечание:** Будьте осторожны при использовании побитовых сдвигов. Числа представлены как [64-битные значения](http://es5.github.io/#x4.3.19), в то время как результат операций побитовых сдвигов является знаковым 32-битовым целым([источник](http://es5.github.io/#x11.7)). Побитовый сдвиг может привести к неожиданному поведению при целых больше чем 32 бит. [Обсуждение](https://github.com/airbnb/javascript/issues/109)
 
     ```javascript
     // good
     /**
-     * parseInt was the reason my code was slow.
-     * Bitshifting the String to coerce it to a
-     * Number made it a lot faster.
+     * parseInt был причиной медленности моего кода.
+     * Побитовый сдвиг преобразует строку в число
+     * намного быстрее.
      */
     var val = inputValue >> 0;
     ```
@@ -988,7 +988,7 @@
 
 ## <a name='naming-conventions'>Соглашения об именованиях</a>
 
-  - Avoid single letter names. Be descriptive with your naming.
+  - Избегайте однобуквенных названий. Будьте описательны в именованиях.
 
     ```javascript
     // bad
@@ -1002,7 +1002,7 @@
     }
     ```
 
-  - Use camelCase when naming objects, functions, and instances
+  - Используйте `camelCase` для именования объектов, функций, и экземпляров
 
     ```javascript
     // bad
@@ -1021,7 +1021,7 @@
     });
     ```
 
-  - Use PascalCase when naming constructors or classes
+  - Используйте `PascalCase` при именовании конструкторов и классов
 
     ```javascript
     // bad
@@ -1043,7 +1043,7 @@
     });
     ```
 
-  - Use a leading underscore `_` when naming private properties
+  - Используйте нижнее подчеркивание в начале `_` для именования приватных свойств
 
     ```javascript
     // bad
@@ -1054,7 +1054,7 @@
     this._firstName = 'Panda';
     ```
 
-  - When saving a reference to `this` use `_this`.
+  - Для сохранения ссылки на `this` используйте `_this`.
 
     ```javascript
     // bad
@@ -1082,7 +1082,7 @@
     }
     ```
 
-  - Name your functions. This is helpful for stack traces.
+  - Именуйте функции. Это полезно поможет при трассировке.
 
     ```javascript
     // bad
@@ -1099,10 +1099,10 @@
     **[[⬆]](#TOC)**
 
 
-## <a name='accessors'>Методы доступа</a>
+## <a name='accessors'>Аксессоры</a>
 
-  - Accessor functions for properties are not required
-  - If you do make accessor functions use getVal() and setVal('hello')
+  - Аксессорные функции для свойств не требуются
+  - Если вы создаете аксессорные функции используйте getVal() и setVal('hello')
 
     ```javascript
     // bad
@@ -1118,7 +1118,7 @@
     dragon.setAge(25);
     ```
 
-  - If the property is a boolean, use isVal() or hasVal()
+  - Для булевого свойства используйте isVal() или hasVal()
 
     ```javascript
     // bad
@@ -1132,7 +1132,7 @@
     }
     ```
 
-  - It's okay to create get() and set() functions, but be consistent.
+  - Нет ничего страшного в том чтобы создать get() и set() функции, но нужно быть последовательным.
 
     ```javascript
     function Jedi(options) {
