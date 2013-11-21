@@ -560,12 +560,12 @@
   - Используйте `===` и `!==` вместо `==` и `!=`.
   - Вычисление условный выражений происходит путем приведения с помощью метода `ToBoolean` и подчиняется следующим правилам:
 
-    + **Objects** преобразуются в **true**
+    + **Object** преобразуюeтся в **true**
     + **Undefined** преобразуется в **false**
     + **Null** преобразуется в **false**
-    + **Booleans** **равен входному аргументу(без преобразования)**
-    + **Numbers** преобразуется в **false** если **+0, -0, or NaN**, иначе **true**
-    + **Strings** преобразуется в **false** если пустая строка `''`, иначе **true**
+    + **Boolean** **равен входному аргументу (без преобразования)**
+    + **Number** преобразуется в **false** если **+0, -0, or NaN**, иначе **true**
+    + **String** преобразуется в **false** если пустая строка `''`, иначе **true**
 
     ```javascript
     if ([0]) {
@@ -605,7 +605,7 @@
 
 ## <a name='blocks'>Блоки</a>
 
-  - Use braces with all multi-line blocks.
+  - Используйте фигурные скобки во всех многострочных блоках.
 
     ```javascript
     // bad
@@ -634,12 +634,12 @@
 
 ## <a name='comments'>Комментарии</a>
 
-  - Use `/** ... */` for multiline comments. Include a description, specify types and values for all parameters and return values.
+  - Используйте `/** ... */` для многострочных комментариев. Включите описание, указажите типы и значения для всех параметров и возвращаемых значений.
 
     ```javascript
     // bad
-    // make() returns a new element
-    // based on the passed in tag name
+    // make() возвращает новый элемент
+    // на основании переданного имени тега
     //
     // @param <String> tag
     // @return <Element> element
@@ -652,8 +652,8 @@
 
     // good
     /**
-     * make() returns a new element
-     * based on the passed in tag name
+     * make() возвращает новый элемент
+     * на основании переданного имени тега
      *
      * @param <String> tag
      * @return <Element> element
@@ -666,7 +666,7 @@
     }
     ```
 
-  - Use `//` for single line comments. Place single line comments on a newline above the subject of the comment. Put an empty line before the comment.
+  - Используйте `//` для однострочных комментариев. Place single line comments on a newline above the subject of the comment. Put an empty line before the comment.
 
     ```javascript
     // bad
