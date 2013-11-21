@@ -467,27 +467,27 @@
 
 ## <a name='hoisting'>Вытягивание</a>
 
-  - Обявления переменных будут перенесены наверх заключающей их области видимости. Присваивание перенесено не будет.
+  - Обявления переменных будут перенесены наверх заключающей их области видимости. Присвоение перенесено не будет.
 
     ```javascript
-    // we know this wouldn't work (assuming there
-    // is no notDefined global variable)
+    // мы знаем, что это не будет работать (при условии что
+    // нет глобальной переменной notDefined)
     function example() {
       console.log(notDefined); // => throws a ReferenceError
     }
 
-    // creating a variable declaration after you
-    // reference the variable will work due to
-    // variable hoisting. Примечание: the assignment
-    // value of `true` is not hoisted.
+    // объявление переменной после ссылки на неё 
+    // будет работать благодаря вытягиванию переменной.
+    // Примечание: присвоение значения `true`
+    // не вытягивается.
     function example() {
       console.log(declaredButNotAssigned); // => undefined
       var declaredButNotAssigned = true;
     }
 
-    // The interpreter is hoisting the variable
-    // declaration to the top of the scope.
-    // Which means our example could be rewritten as:
+    // Интерпретатор вытягивает объявление переменной
+    // наверх области видимости.
+    // Это означает что пример может быть переписан так:
     function example() {
       var declaredButNotAssigned;
       console.log(declaredButNotAssigned); // => undefined
@@ -495,7 +495,7 @@
     }
     ```
 
-  - Anonymous function expressions hoist their variable name, but not the function assignment.
+  - Из анонимного функционального выражения вытягивается имя переменной, но не присвоение функции.
 
     ```javascript
     function example() {
@@ -509,7 +509,7 @@
     }
     ```
 
-  - Named function expressions hoist the variable name, not the function name or the function body.
+  - Из анонимного функционального выражения вытягивается имя переменной, но не название функции или её тело.
 
     ```javascript
     function example() {
@@ -524,8 +524,8 @@
       };
     }
 
-    // the same is true when the function name
-    // is the same as the variable name.
+    // то же справедливо когда имя функции
+    // совпадает с именем переменной.
     function example() {
       console.log(named); // => undefined
 
@@ -537,7 +537,7 @@
     }
     ```
 
-  - Function declarations hoist their name and the function body.
+  - Из декларации функции вытягиваются имя и тело функции.
 
     ```javascript
     function example() {
@@ -549,7 +549,7 @@
     }
     ```
 
-  - For more information refer to [JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting) by [Ben Cherry](http://www.adequatelygood.com/)
+  - Больше информации [JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting) автора [Ben Cherry](http://www.adequatelygood.com/)
 
     **[[⬆]](#TOC)**
 
@@ -557,24 +557,24 @@
 
 ## <a name='conditionals'>Условные выражения и равенства</a>
 
-  - Use `===` and `!==` over `==` and `!=`.
-  - Conditional expressions are evaluated using coercion with the `ToBoolean` method and always follow these simple rules:
+  - Используйте `===` и `!==` вместо `==` и `!=`.
+  - Вычисление условный выражений происходит путем приведения с помощью метода `ToBoolean` и подчиняется следующим правилам:
 
-    + **Objects** evaluate to **true**
-    + **Undefined** evaluates to **false**
-    + **Null** evaluates to **false**
-    + **Booleans** evaluate to **the value of the boolean**
-    + **Numbers** evaluate to **false** if **+0, -0, or NaN**, otherwise **true**
-    + **Strings** evaluate to **false** if an empty string `''`, otherwise **true**
+    + **Objects** преобразуются в **true**
+    + **Undefined** преобразуется в **false**
+    + **Null** преобразуется в **false**
+    + **Booleans** **равен входному аргументу(без преобразования)**
+    + **Numbers** преобразуется в **false** если **+0, -0, or NaN**, иначе **true**
+    + **Strings** преобразуется в **false** если пустая строка `''`, иначе **true**
 
     ```javascript
     if ([0]) {
       // true
-      // An array is an object, objects evaluate to true
+      // Массив — это объект, а объекты преобразуются в `true`
     }
     ```
 
-  - Use shortcuts.
+  - Используйте сокращения.
 
     ```javascript
     // bad
@@ -598,7 +598,7 @@
     }
     ```
 
-  - For more information see [Truth Equality and JavaScript](http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108) by Angus Croll
+  - Детальнее [Truth Equality and JavaScript](http://javascriptweblog.wordpress.com/2011/02/07/truth-equality-and-javascript/#more-2108), автор Angus Croll
 
     **[[⬆]](#TOC)**
 
